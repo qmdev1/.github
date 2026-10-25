@@ -1,0 +1,29 @@
+name: Ticket
+description: Fonctionnalité, bug ou tâche à confier à un agent
+body:
+  - type: textarea
+    id: besoin
+    attributes:
+      label: Besoin
+      description: Ce qu'il faut obtenir et pourquoi.
+    validations:
+      required: true
+  - type: textarea
+    id: criteres
+    attributes:
+      label: Critères d'acceptation
+      description: Conditions vérifiables, une par ligne.
+      value: |
+        - [ ] 
+    validations:
+      required: true
+  - type: textarea
+    id: dependances
+    attributes:
+      label: Dépendances
+      description: "Tickets à terminer avant celui-ci, sous la forme « Dépend de #N »."
+  - type: textarea
+    id: contexte
+    attributes:
+      label: Contexte
+      description: Liens, captures, pistes, contraintes.
