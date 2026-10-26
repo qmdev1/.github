@@ -1,4 +1,6 @@
-Closes #
+Refs #
+
+<!-- Jamais « Closes » : le ticket est fermé après vérification en production. -->
 
 ## Ce qui change et pourquoi
 
