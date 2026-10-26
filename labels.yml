@@ -3,10 +3,10 @@
 # `aliases` are old names: the sync renames them (issues keep their label).
 # Any label not listed here (name or alias) is deleted from the repository.
 
-repositories:
-  - mpg-quentin-miremont
-  - quentin-miremont.fr
-  - ndd-app
+# Applies to every repository owned by qmdev1 (forks and archived ones
+# excluded), present and future. Repositories to leave alone:
+exclude:
+  - .github
 
 common:
   # type: exactly one per issue

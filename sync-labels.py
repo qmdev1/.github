@@ -2,7 +2,9 @@
 """Apply labels.yml to every qmdev1 repository listed in it.
 
 Usage: python3 sync-labels.py [--apply] [--repo NAME]
-Without --apply, only prints what would change. Needs `gh` logged in
+Covers every repository owned by qmdev1 (forks, archived repositories and
+`exclude` in labels.yml left out), so a new repository is picked up on the
+next run. Without --apply, only prints what would change. Needs `gh` logged in
 with write access to the repositories, and PyYAML.
 """
 import argparse
@@ -101,13 +103,25 @@ def sync(repo, wanted, apply):
                 lambda l=l: gh("-X", "DELETE", label_path(repo, l["name"])))
 
 
+def repositories(conf):
+    repos, page = [], 1
+    while True:
+        batch = gh(f"user/repos?affiliation=owner&per_page=100&page={page}")
+        repos += [r["name"] for r in batch
+                  if r["owner"]["login"] == OWNER and not r["fork"] and not r["archived"]]
+        if len(batch) < 100:
+            break
+        page += 1
+    return sorted(set(repos) - set(conf.get("exclude", [])))
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--apply", action="store_true", help="make the changes")
     p.add_argument("--repo", help="only this repository")
     args = p.parse_args()
     conf = yaml.safe_load((Path(__file__).parent / "labels.yml").read_text())
-    for repo in conf["repositories"]:
+    for repo in repositories(conf):
         if args.repo and repo != args.repo:
             continue
         print(f"== {repo}{'' if args.apply else ' (dry run)'}")
