@@ -1,0 +1,99 @@
+# Labels shared by all qmdev1 repositories.
+# Edit this file through a pull request, then run: python3 sync-labels.py
+# `aliases` are old names: the sync renames them (issues keep their label).
+# Any label not listed here (name or alias) is deleted from the repository.
+
+repositories:
+  - mpg-quentin-miremont
+  - quentin-miremont.fr
+  - ndd-app
+
+common:
+  # type: exactly one per issue
+  - name: "type:feature"
+    color: 1D76DB
+    description: New feature or user-visible improvement
+    aliases: [fonctionnalite, fonctionnalité]
+  - name: "type:bug"
+    color: D73A4A
+    description: Something does not work as expected
+    aliases: [correction, bug]
+  - name: "type:chore"
+    color: C5DEF5
+    description: Setup, tooling, configuration, refactoring
+    aliases: [technique]
+  - name: "type:docs"
+    color: 0075CA
+    description: Documentation only
+    aliases: [documentation]
+  - name: "type:research"
+    color: FBCA04
+    description: Study that delivers a note or a recommendation, not production code
+    aliases: [etude]
+  - name: "type:security"
+    color: B60205
+    description: Security issue or hardening
+    aliases: [sécurité]
+
+  # status: set and removed along the agent workflow
+  - name: "status:blocked"
+    color: E99695
+    description: Waiting for an issue it depends on
+    aliases: [bloqué, bloque]
+  - name: "status:needs-human"
+    color: D93F0B
+    description: Needs an account, an API key, a payment or a decision from Quentin
+    aliases: [besoin-humain]
+  - name: "status:design-approved"
+    color: 0E8A16
+    description: Design approved by a human, the agent may implement
+    aliases: [conception-validée]
+
+  # origin
+  - name: "origin:discovery"
+    color: FEF2C0
+    description: Found by an agent outside the scope of another issue
+    aliases: [découverte]
+
+per_repository:
+  ndd-app:
+    - name: "area:purchase"
+      color: 5319E7
+      description: "Area: purchase"
+      aliases: [achat]
+    - name: "area:evaluation"
+      color: 5319E7
+      description: "Area: evaluation"
+      aliases: [evaluation]
+    - name: "area:finance"
+      color: 5319E7
+      description: "Area: finance"
+      aliases: [finance]
+    - name: "area:portfolio"
+      color: 5319E7
+      description: "Area: portfolio"
+      aliases: [portefeuille]
+    - name: "area:sourcing"
+      color: 5319E7
+      description: "Area: sourcing"
+      aliases: [reperage]
+    - name: "area:resale"
+      color: 5319E7
+      description: "Area: resale"
+      aliases: [revente]
+    - name: "area:core"
+      color: 5319E7
+      description: "Area: technical foundation"
+      aliases: [socle]
+    - name: "scenario:s1"
+      color: BFD4F2
+      description: "Scenario 1: quick flip"
+      aliases: [S1]
+    - name: "scenario:s2"
+      color: BFD4F2
+      description: "Scenario 2: patient holding"
+      aliases: [S2]
+    - name: "scenario:s3"
+      color: BFD4F2
+      description: "Scenario 3: direct sale"
+      aliases: [S3]
