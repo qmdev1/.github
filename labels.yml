@@ -55,45 +55,4 @@ common:
     description: Found by an agent outside the scope of another issue
     aliases: [découverte]
 
-per_repository:
-  ndd-app:
-    - name: "area:purchase"
-      color: 5319E7
-      description: "Area: purchase"
-      aliases: [achat]
-    - name: "area:evaluation"
-      color: 5319E7
-      description: "Area: evaluation"
-      aliases: [evaluation]
-    - name: "area:finance"
-      color: 5319E7
-      description: "Area: finance"
-      aliases: [finance]
-    - name: "area:portfolio"
-      color: 5319E7
-      description: "Area: portfolio"
-      aliases: [portefeuille]
-    - name: "area:sourcing"
-      color: 5319E7
-      description: "Area: sourcing"
-      aliases: [reperage]
-    - name: "area:resale"
-      color: 5319E7
-      description: "Area: resale"
-      aliases: [revente]
-    - name: "area:core"
-      color: 5319E7
-      description: "Area: technical foundation"
-      aliases: [socle]
-    - name: "scenario:s1"
-      color: BFD4F2
-      description: "Scenario 1: quick flip"
-      aliases: [S1]
-    - name: "scenario:s2"
-      color: BFD4F2
-      description: "Scenario 2: patient holding"
-      aliases: [S2]
-    - name: "scenario:s3"
-      color: BFD4F2
-      description: "Scenario 3: direct sale"
-      aliases: [S3]
+per_repository: {}
